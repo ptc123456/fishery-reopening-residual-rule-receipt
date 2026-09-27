@@ -1,0 +1,16 @@
+# Studio Dev E2E evidence
+
+Network: `studio-dev`, chain `61997`, RPC `https://studio-dev.genlayer.com/api`.
+Actor: `ic-deployer` (`0xf5c66e5155a62e27047ad4cce729593d6b9c03fc`).
+Contract: `0x69Fe6D78E486CF0eB3b4828B3763e9BCD86162d0`.
+
+| Scenario | Transaction | Finality/consensus | Authoritative result |
+|---|---|---|---|
+| Constructor/deploy | `0xaf38ff5df3ee569df12f8c9ec27849aad5697b1b41713d0c5c57ef0d9d1e105c` | FINALIZED / ACCEPTED | contract address above |
+| Create sealed notice | `0x45bbc73475a59cc42aa8b5de98a73d2d4af7ed203c9f251ec3aa1900751f19c3` | FINALIZED / MAJORITY_AGREE | notice status `DRAFT` |
+| Seal notice | recorded in CLI receipt | FINALIZED / ACCEPTED | `get_notice.status = SEALED` |
+| Happy-path open assessment | `0x917b4b41f62d6340a136efe2ec0eb61becccdbd6b2d54e9e1639612578f98a5d` | FINALIZED / MAJORITY_AGREE | `OPEN`, identity true, window `OPEN`, trip limit `3500` |
+
+The source bulletin is NOAA's Spanish mackerel northern-zone federal reopening bulletin, SHA-256 `4af351a870befde9b50305f36eb102996fbcd9b9cc1a36e3ddf7b0cdb99cfa2e`.
+
+The deployed contract uses strict equality over the validator-produced source comparison and fails closed to `UNRESOLVED` on disagreement or malformed external data. Replay and lifecycle state violations are rejected before state mutation.
