@@ -13,6 +13,8 @@ Contract: `0x69Fe6D78E486CF0eB3b4828B3763e9BCD86162d0`.
 | After-close commercial with all pre-closure flags | `0xf5ace3ac28955d04127279ffc0955a1ab0c8c0215bd2e408ff8a83effc5e7110` | FINALIZED / ACCEPTED | identity true, window `AFTER`, sale exception `ALLOWED`; validator disagreement correctly fails closed to `UNRESOLVED` |
 | After-close recreational residual | `0x7cb49cdfa8a7dc196ec8595c0ac704022b527e574a28ef701ad8a5525de30b65` | FINALIZED / ACCEPTED | authoritative readback `CLOSED_WITH_RESIDUAL`, identity true, recreational residual `ALLOWED` |
 | Replay of `assessment-open` | `0x7d16de3bbdc5b6bf113982a965f871097bf23091ff838fd9c6b98f2c36da9035` | FINALIZED / ACCEPTED with `FINISHED_WITH_ERROR` | rejected as invalid or replayed assessment; prior readback unchanged |
+| Unauthorized seal by `cpc-unauthorized-20260813` | `0xa724e982939e9d049731e43889dff86202c3f73c21e2aabc5e8d9eb03edf4977` | FINALIZED / ACCEPTED with `FINISHED_WITH_ERROR` | owner-only check rejected; active owner state unchanged |
+| Successor notice lifecycle | transactions recorded in `successor_seal.log` and `successor_supersede.log` | FINALIZED / ACCEPTED | old notice readback is `SUPERSEDED`; `get_superseded_by` returns `notice-2025-spanish-mackerel-successor` |
 
 The source bulletin is NOAA's Spanish mackerel northern-zone federal reopening bulletin, SHA-256 `4af351a870befde9b50305f36eb102996fbcd9b9cc1a36e3ddf7b0cdb99cfa2e`.
 
