@@ -12,6 +12,7 @@ Contract: `0x69Fe6D78E486CF0eB3b4828B3763e9BCD86162d0`.
 | Happy-path open assessment | `0x917b4b41f62d6340a136efe2ec0eb61becccdbd6b2d54e9e1639612578f98a5d` | FINALIZED / MAJORITY_AGREE | `OPEN`, identity true, window `OPEN`, trip limit `3500` |
 | After-close commercial with all pre-closure flags | `0xf5ace3ac28955d04127279ffc0955a1ab0c8c0215bd2e408ff8a83effc5e7110` | FINALIZED / ACCEPTED | identity true, window `AFTER`, sale exception `ALLOWED`; validator disagreement correctly fails closed to `UNRESOLVED` |
 | After-close recreational residual | `0x7cb49cdfa8a7dc196ec8595c0ac704022b527e574a28ef701ad8a5525de30b65` | FINALIZED / ACCEPTED | authoritative readback `CLOSED_WITH_RESIDUAL`, identity true, recreational residual `ALLOWED` |
+| Replay of `assessment-open` | `0x7d16de3bbdc5b6bf113982a965f871097bf23091ff838fd9c6b98f2c36da9035` | FINALIZED / ACCEPTED with `FINISHED_WITH_ERROR` | rejected as invalid or replayed assessment; prior readback unchanged |
 
 The source bulletin is NOAA's Spanish mackerel northern-zone federal reopening bulletin, SHA-256 `4af351a870befde9b50305f36eb102996fbcd9b9cc1a36e3ddf7b0cdb99cfa2e`.
 
